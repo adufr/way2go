@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Settings'
+  name: 'Recents'
 }
 </script>
 

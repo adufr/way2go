@@ -1,125 +1,26 @@
 <template>
-  <div class="container">
-    <h1 class="mt-5">
-      Médicaments favoris
-    </h1>
-    <p class="text-gray-500 mb-0">
-      Accédez rapidement à vos médicaments favoris <br>
-      (Double cliquez dessus pour afficher plus d'informations)
-    </p>
+  <div class="text-center mt-5">
     <div
-      v-show="favorites.length"
-      id="table"
-      class="card shadow mt-5 mb-5"
+      class="error mx-auto "
+      data-text="404"
     >
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary text-left">
-          Médicaments favoris
-        </h6>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table
-            class="table table-bordered"
-            width="100%"
-            cellspacing="0"
-          >
-            <thead>
-              <tr>
-                <th class="text-left">
-                  Médicament
-                </th>
-                <th class="text-left">
-                  Type
-                </th>
-                <th>(CIS)</th>
-              </tr>
-            </thead>
-            <tbody
-              v-for="(medicament, index) in favorites"
-              :key="index"
-            >
-              <tr
-                data-toggle="modal"
-                data-target=".med-modal"
-                @click="getDetailOf(medicament.codeCIS)"
-              >
-                <td class="text-left">
-                  {{ medicament.denomination.split(',')[0] }}
-                  <i
-                    v-if="favorites.find(id => id === medicament.codeCIS)"
-                    class="fas fa-star ml-2"
-                    style="color: #F4B619"
-                  />
-                </td>
-                <td class="text-left">
-                  {{ medicament && medicament.denomination.length >= 2 ? capitalizeFirstLetter(medicament.denomination.split(',')[1]) : 'Aucune' }}
-                </td>
-                <td>{{ medicament.codeCIS }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      404
     </div>
-
-    <p
-      v-if="!favorites.length"
-      class="description"
-    >
-      Vous n'avez aucun médicament favoris
+    <p class="lead text-gray-800 mb-5">
+      Page Not Found
     </p>
-
-    <Med
-      v-if="isModalVisible"
-      :med="med"
-      :favorites="favorites"
-      @close="isModalVisible = false"
-    />
+    <p class="text-gray-500 mb-0">
+      Certaines fonctionnalités ne sont pas encore disponibles...
+    </p>
+    <a href="/#/dashboard?page=dashboard">&larr; Retour au dashboard</a>
   </div>
 </template>
 
 <script>
-import Med from '../Med.vue'
-
 export default {
-  name: 'Favs',
-  components: {
-    Med
-  },
-  data () {
-    return {
-      status: '',
-      med: { name: 'test' },
-      isModalVisible: false
-    }
-  },
-  computed: {
-    favorites: function () {
-      return this.$attrs.favorites
-    }
-  },
-  methods: {
-    capitalizeFirstLetter: function (string) {
-      if (!string) return 'Aucune'
-      string = string.trim().toLowerCase()
-      return string.charAt(0).toUpperCase() + string.slice(1)
-    },
-    getDetailOf: function (medId) {
-      this.$http.get(`${this.$proxyUrl}/api/v1/medicaments/${medId}`).then(res => {
-        this.med = res.data
-        this.isModalVisible = true
-      })
-    }
-  }
+  name: 'Recents'
 }
 </script>
 
 <style scoped>
-.description {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-size: 20px;
-  color: rgb(126, 126, 126);
-}
 </style>
