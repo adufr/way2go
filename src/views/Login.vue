@@ -170,7 +170,7 @@ export default {
   },
   methods: {
     login: async function () {
-      router.push('/dashboard')
+      router.push('/dashboard?page=dashboard')
     },
     register: async function () {
       this.form = 'login'
