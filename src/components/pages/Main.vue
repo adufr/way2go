@@ -1,21 +1,23 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pl-0 pr-0">
     <!-- Page heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">
-        Tableau de bord
+      <h1 class="h3 mb-2 text-gray-800">
+        Tableau de bord : Chine
       </h1>
+      <h3 class="h5 mb-0 text-gray-500">
+        Départ dans 7 jours !
+      </h3>
     </div>
 
     <div class="row">
-      <!-- Profile completed info -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-info shadow h-100 py-2">
+        <div class="card border-left-info shadow h-100 py-0">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2 text-left">
                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                  Profil rempli à
+                  ÉTAT DE LA PLANIFICATION
                 </div>
                 <div class="row no-gutters align-items-center">
                   <div class="col-auto">
@@ -45,63 +47,20 @@
         </div>
       </div>
 
-      <!-- Notifications counter -->
       <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card border-left-warning shadow h-100 py-0">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2 text-left">
                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                  Notifications non lues
+                  TÂCHES RESTANTES
                 </div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                  {{ notifications.length >= 1 ? notifications.length : 'Aucune' }}
+                  17
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-bell fa-2x text-gray-300" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Favs medicines -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2 text-left">
-                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                  Médicaments favoris
-                </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
-                  {{ favorites.length >= 1 ? favorites.length : 'Aucun' }}
-                </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-star fa-2x text-gray-300" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Next appointment -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2 text-left">
-                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                  Prochain rendez-vous
-                </div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">
-                  (à venir...)
-                </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-calendar-alt fa-2x text-gray-300" />
+                <i class="fas fa-tasks fa-2x text-gray-300" />
               </div>
             </div>
           </div>
@@ -140,33 +99,30 @@
           </div>
         </div>
       </div>
-      <!-- mobile app -->
-      <div class="col-lg-6 mb-4">
+      <div class="col-xl-4 col-lg-5">
         <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">
-              Application mobile
-            </h6>
-          </div>
-          <div class="card-body">
-            <div class="text-center">
-              <!-- <img
-                class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                style="width: 25rem;"
-                src="../../assets/mobile_application.svg"
-                alt="Application mobile"
-              > -->
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py- d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Budget (par personne)</h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Affichage</div>
+                <a class="dropdown-item" href="#">Une action</a>
+                <a class="dropdown-item" href="#">Une autre action</a>
+              </div>
             </div>
-            <p>
-              Téléchargez notre application mobile !
-            </p>
-            <a
-              target="_blank"
-              rel="nofollow"
-              href=""
-            >
-              En savoir plus →
-            </a>
+          </div>
+          <!-- Card Body -->
+          <div
+            class="card-body pl-0 pr-0"
+            style="width: xpx; margin: 0 auto"
+          >
+            <div class="chart-pie pt-2 pb-2">
+              <pie-chart style="height: 210px; width: 210px" :data="chartData"></pie-chart>
+            </div>
           </div>
         </div>
       </div>
@@ -175,18 +131,25 @@
 </template>
 
 <script>
+import PieChart from '../PieChart.js'
+
 export default {
   name: 'Main',
+  components: {
+    PieChart
+  },
   data () {
     return {
-    }
-  },
-  computed: {
-    notifications: function () {
-      return this.$attrs.notifications
-    },
-    favorites: function () {
-      return this.$attrs.favorites
+      chartData: {
+        labels: ['Avion', 'Hôtel', 'Visites', 'Nourriture'],
+        datasets: [
+          {
+            // label: 'Data One',
+            backgroundColor: ['#41B883', '#E46651', '#00D8FF'],
+            data: [1, 10, 5, 4]
+          }
+        ]
+      }
     }
   }
 }
