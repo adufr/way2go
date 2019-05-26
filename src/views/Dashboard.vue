@@ -216,7 +216,7 @@
                     </div>
                     <div>
                       <div class="font-weight-bold text-gray-700">Chine : Départ dans 7 jours !</div>
-                      <span class="small text-gray-600">Plus qu'une semaine avant votre départ ! Vérifiez que vous n'avez rien oublié dans votre valise ;)</span>
+                      <span class="small text-gray-600">Plus qu'une semaine avant votre départ ! Vérifiez que vous n'avez rien oublié dans votre valise...</span>
                     </div>
                   </a>
 
@@ -229,6 +229,64 @@
                     <div>
                       <div class="font-weight-bold text-gray-700">Canada : Billets d'avion</div>
                       <span class="small text-gray-600"><b>Thomas</b> viens d'indiquer qu'il a acheté son billet d'avion ! Avez-vous pris le votre ?</span>
+                    </div>
+                  </a>
+
+                  <a class="dropdown-item text-center small text-gray-500">Tout marquer comme "lu"</a>
+                </div>
+
+                <!-- <div class="text-center text-gray-700 mb-3 mt-3">
+                  <span>Aucune notification !</span>
+                </div> -->
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a
+                id="messagesDropdown"
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-envelope fa-fw" />
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">2</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div
+                class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown"
+              >
+                <h6 class="dropdown-header">
+                  Messages
+                </h6>
+
+                <div>
+                  <a class="dropdown-item d-flex align-items-center pl-2 pr-2">
+                    <div class="mr-2">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-user text-white" />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-weight-bold text-gray-700">Alexandre</div>
+                      <span class="small text-gray-600">Est-ce que tu as pensé au taxi pour aller à l'aéroport ou bien tu veux...</span>
+                    </div>
+                  </a>
+
+                  <a class="dropdown-item d-flex align-items-center pl-2 pr-2">
+                    <div class="mr-2">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-users text-white" />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-weight-bold text-gray-700">Canada</div>
+                      <span class="small text-gray-600"><i>Vous avez 17 messages non-lus</i></span>
                     </div>
                   </a>
 
