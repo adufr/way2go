@@ -66,44 +66,35 @@
           </div>
         </div>
       </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-0">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2 text-left">
+                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                  BUDGET (PAR PERSONNE)
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                  2550,00€
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-euro-sign fa-2x text-gray-300" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Content Row -->
     <div class="row">
-      <!-- website -->
-      <div class="col-lg-6 mb-4">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">
-              Portail en ligne
-            </h6>
-          </div>
-          <div class="card-body">
-            <div class="text-center">
-              <!-- <img
-                class="img-fluid px-3 px-sm-4 mt-3 mb-4"
-                style="width: 25rem;"
-                src="../../assets/doctors.svg"
-                alt="Médecins"
-              > -->
-            </div>
-            <p>
-              Votre dossier médical en ligne !
-            </p>
-            <a
-              rel="nofollow"
-              href="/"
-            >
-              Accéder au site →
-            </a>
-          </div>
-        </div>
-      </div>
       <div class="col-xl-4 col-lg-5">
         <div class="card shadow mb-4">
           <!-- Card Header - Dropdown -->
           <div class="card-header py- d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Budget (par personne)</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Répartition du budget</h6>
             <div class="dropdown no-arrow">
               <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -141,12 +132,12 @@ export default {
   data () {
     return {
       chartData: {
-        labels: ['Avion', 'Hôtel', 'Visites', 'Nourriture'],
+        labels: ['Avion', 'Hôtel', 'Nourriture', 'Visites', 'Extras'],
         datasets: [
           {
-            // label: 'Data One',
-            backgroundColor: ['#41B883', '#E46651', '#00D8FF'],
-            data: [1, 10, 5, 4]
+            label: 'Répartition du budget',
+            backgroundColor: ['#a341f4', '#E46651', '#019b41', '#e9ed25'],
+            data: [600, 1000, 200, 250, 500]
           }
         ]
       }
