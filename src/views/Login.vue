@@ -50,6 +50,7 @@
             type="submit"
             class="btn btn-primary"
             style="width: 250px"
+            @click="login()"
           >
             <i class="fas fa-sign-in-alt fa-spacer" />
             Se connecter
@@ -137,6 +138,7 @@
             type="submit"
             class="btn btn-primary"
             style="width: 250px"
+            @click="register()"
           >
             <i class="fas fa-user-plus fa-spacer" />
             S'inscrire
@@ -166,15 +168,13 @@ export default {
       form: 'login'
     }
   },
-  computed: {
-  },
-  mounted () {
-  },
   methods: {
     login: async function () {
+      router.push('/dashboard')
     },
     register: async function () {
-    },
+      this.form = 'login'
+    }
   }
 }
 </script>
@@ -193,7 +193,6 @@ export default {
 }
 
 .title {
-  /* color: #639BC0; */
   font-size: 40px;
   font-weight:bold;
 }
