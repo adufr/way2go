@@ -5,14 +5,21 @@
         Todo-list
       </h2>
 
-      <input
-        v-model.trim="newTodo"
-        type="text"
-        class="form-control search-input border-0"
-        placeholder="Ajoutez une tâche..."
-        @keyup.enter="addTodo()"
-        autofocus
-      >
+      <div class="input-group">
+        <input
+          v-model.trim="newTodo"
+          type="text"
+          class="form-control search-input border-0"
+          placeholder="Ajoutez une tâche..."
+          @keyup.enter="addTodo()"
+          autofocus
+        >
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-plus fa-sm"></i>
+          </button>
+        </div>
+      </div>
 
       <h5 class="h5 mt-4 mb-4 text-gray-800">
         Tâches à faire
