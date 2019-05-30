@@ -72,7 +72,7 @@ $light-bg: #272222 !important;
 $dark-bg: #dddcdc !important;
 $input-background-color: #eeeeee !important;
 $header-color: #ffffff !important;
-$window-height: 600px !important;
+$window-height: 550px !important;
 $window-width: 600px !important;
 @import "../../../node_modules/basic-vue-chat/src/assets/scss/main.scss";
 
