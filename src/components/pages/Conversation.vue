@@ -68,7 +68,6 @@ export default {
 $primary:#b14859 !important;
 $secondary:#b14859 !important;
 $light-text-color: #f1f1f1 !important;
-$light-bg: #272222 !important;
 $dark-bg: #dddcdc !important;
 $input-background-color: #eeeeee !important;
 $header-color: #ffffff !important;
