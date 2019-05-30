@@ -36,10 +36,10 @@
       </div>
 
       <div class="card shadow mb-4">
-        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
+        <a href="#collapse3" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse3">
           <h6 class="m-0 font-weight-bold text-primary text-left">Centre ville de Pékin (4)</h6>
         </a>
-        <div class="collapse show" id="collapseCardExample">
+        <div class="collapse show" id="collapse3">
           <div class="card-body">
             <img src="../../assets/chine7.jpeg" class="img-fluid mb-3" alt="Photo centre pékin">
             <img src="../../assets/chine8.jpeg" class="img-fluid mb-3" alt="Photo centre pékin">
