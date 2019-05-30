@@ -324,7 +324,7 @@
               >
                 <a
                   class="dropdown-item text-gray-500"
-                  href="/#/dashboard?page=conversation"
+                  href="/#/dashboard?page=settings"
                 >
                   <i class="fas fa-user fa-sm fa-fw mr-2" />
                   Mon profil
