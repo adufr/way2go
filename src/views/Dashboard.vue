@@ -131,6 +131,19 @@
             <span>Conversation</span></a>
         </li>
 
+        <li class="nav-item">
+          <a
+            :class="['here', { active: page === 'photos' } ]"
+            class="nav-link"
+            href="/#/dashboard?page=photos"
+          >
+            <i
+              class="fas fa-fw fa-image"
+              :class="['here', { active: page === 'photos' } ]"
+            />
+            <span>Photos</span></a>
+        </li>
+
         <hr class="sidebar-divider">
 
         <div class="sidebar-heading">
@@ -364,6 +377,7 @@
             <Budget v-show="page === 'budget'" />
             <Notes v-show="page === 'notes'" />
             <Conversation v-show="page === 'conversation'" />
+            <Photos v-show="page === 'photos'" />
             <Settings v-show="page === 'settings'" />
           </div>
         </div>
@@ -386,6 +400,7 @@ import Planning from '../components/pages/Planning.vue'
 import Budget from '../components/pages/Budget.vue'
 import Notes from '../components/pages/Notes.vue'
 import Conversation from '../components/pages/Conversation.vue'
+import Photos from '../components/pages/Photos.vue'
 import Settings from '../components/pages/Settings.vue'
 
 export default {
@@ -399,6 +414,7 @@ export default {
     Budget,
     Notes,
     Conversation,
+    Photos,
     Settings
   },
   data () {
@@ -426,6 +442,10 @@ export default {
 <style scoped>
 .here.active {
   color: white !important;
+}
+
+.nav-link {
+  padding: 12px !important
 }
 
 .roboto {
