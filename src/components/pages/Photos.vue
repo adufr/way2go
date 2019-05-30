@@ -48,6 +48,18 @@
           </div>
         </div>
       </div>
+
+      <div class="card shadow mb-4">
+        <a href="#collapse4" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapse4">
+          <h6 class="m-0 font-weight-bold text-primary text-left">Arbres chinois (2)</h6>
+        </a>
+        <div class="collapse show" id="collapse4">
+          <div class="card-body">
+            <img src="../../assets/chine11.jpeg" class="img-fluid mb-3" alt="Arbre">
+            <img src="../../assets/chine12.jpeg" class="img-fluid mb-3" alt="Arbre">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
